@@ -18,7 +18,7 @@ const operators=[
         name:"divide",
         symbol:"/",
         action:(op1,op2)=>{
-            return op1/op2;
+            return (op1/op2).toFixed(2);
         }
     },
     {
@@ -72,6 +72,10 @@ export const evaluateScore=()=>{
         if(question.isCorrect) score++;
     })
     return score;
+}
+
+export const resetQuestion=()=>{
+    questions=[];
 }
 
 export const showData=()=>{
