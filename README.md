@@ -1,4 +1,4 @@
-# JS Excercise VinSol
+# JS Exercise VinSol
 
 <img src="./screenshots/1.png"><br/><br/>
 <img src="./screenshots/2.png"><br/><br/>
@@ -37,7 +37,7 @@
 
 ### Clone the repository
 
-``git clone https://github.com/rahul-vedant/js-excercise-vinsol.git``
+``git clone https://github.com/rahul-vedant/js-exercise-vinsol.git``
 
 ### Available Scripts
 
