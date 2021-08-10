@@ -9,9 +9,35 @@
 <img src="./screenshots/7.png"><br/><br/>
 <img src="./screenshots/8.png"><br/><br/>
 
-## Getting Started with Create React App
+## Project Details
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+- On a web page, there will be two quizzes running simultaneously.
+
+- When the user loads that web page, the web page will be divided into two quiz section.
+
+- Each quiz section will show a "Start Quiz" button on clicking that button, the quiz will start and asks 20 mathematical questions
+
+- Not all 20 questions will be asked at once, the application will show questions one by one.
+
+- The quiz should generate two random numbers less than 10 and then pick an operator randomly ( add, subtract, divide, multiply).
+
+- User should be able to enter his answer, and click next button(until all questions are not attempted).
+
+- The application should evaluate the answer when the user moves to the next screen and show the score at the bottom.
+
+- User should not be allowed to go back and edit answers.
+
+- Once all questions are attempted, show user the final score and all questions asked in the quiz. Highlight questions(in red color) which user did not answer or answer was incorrect. Show correct answer with the questions.
+
+- Plus points if the exercise solution is generic, like user can choose how many questions in a quiz, what range of random number(instead of 10 users can choose operands up to 15), user can select operators he wants to practice in the quiz.
+
+
+## To Execute
+
+### Clone the repository
+
+``git clone https://github.com/rahul-vedant/js-excercise-vinsol.git``
 
 ### Available Scripts
 
@@ -25,57 +51,23 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-#### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 #### `npm run build`
 
 Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `npx serve -s build`
+The build folder is ready to be deployed.
+You may serve it with a static server:
 
-#### `npm run eject`
+``npx serve -s build``
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  or
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+``npm install -g serve
+  serve -s build``
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-### Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-#### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-#### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-#### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-#### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-#### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-#### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  
