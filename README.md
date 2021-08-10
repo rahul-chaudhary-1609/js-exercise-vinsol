@@ -66,8 +66,8 @@ You may serve it with a static server:
 
   or
 
-``npm install -g serve
-  serve -s build``
+``npm install -g serve``
+``serve -s build``
 
 
   
