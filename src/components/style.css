@@ -6,16 +6,29 @@
 .main-container{
     display: flex;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
 }
 
 .left-container{
     flex-direction: column;
+    justify-content: flex-start;
     align-items:center;
     border: 1px solid #006366;;
     width: 100%;
     margin: 10px;
     padding: 10px;
+    overflow: scroll;
+}
+
+.right-container{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:center;
+    border: 1px solid #006366;;
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    overflow: scroll;
 }
 
 .question-box{
@@ -46,12 +59,7 @@
     width: 100%;
 }
 
-.right-container{
-    align-items: center;
-    border: 1px solid #006366;;
-    width: 100%;
-    margin: 10px;
-}
+
 
 span,input{
     margin: 10px;
@@ -59,7 +67,7 @@ span,input{
 }
 
 input{
-    width: 75px;
+    width: 100px;
     padding-left: 10px;
 }
 
@@ -101,17 +109,45 @@ button{
     width: 8rem;
     font-size: large;
     border-radius: 15px;
+    margin-top: 100px;
 }
 
 .final-score-div{
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
 }
 
+.final-score-div .start-quiz-button{
+    margin-top: 0px;
+}
+
 .current-score-div{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
+}
+
+.start-quiz-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8rem;
+    padding: 15px;
+}
+
+.start-quiz-div input{
+    border: 1px solid rgba(0,0,0,0.2);
+    color: rgba(0,0,0,0.4);
+    width: 75px;
+    padding-left: 10px;
+}
+
+.select-operator{
+    width: 300px;
+    padding-left: 10px;
 }

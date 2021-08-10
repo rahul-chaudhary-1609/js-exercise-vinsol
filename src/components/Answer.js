@@ -57,8 +57,8 @@ class Answer extends React.Component {
                       )
                     })}
                     <div className="final-score-div">
-                        <span>Final Score: {this.props.state.currentScore}</span>
-                        <button className="start-quiz-button" onClick={this.handleRestartClick}>Restart</button>
+                        <div><span>Final Score: {this.props.state.currentScore}</span></div>
+                        <div><button className="start-quiz-button" onClick={this.handleRestartClick}>Restart</button></div>
                     </div>
               </div>
         </>);            

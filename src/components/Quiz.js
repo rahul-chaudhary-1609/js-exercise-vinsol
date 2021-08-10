@@ -1,8 +1,9 @@
 import React from "react";
 import './style.css';
-import {generateRandomQuestion, saveResponse,evaluateScore,resetQuestion} from "../utils/operations";
+import {generateRandomQuestion, saveResponse,evaluateScore,resetQuestion,operatorList} from "../utils/operations";
 import Question from "./Question";
 import Answer from "./Answer";
+import Select from 'react-select';
 
 class Quiz extends React.Component {
 
@@ -18,13 +19,16 @@ class Quiz extends React.Component {
       isStarted:false,
       currentScore:0,
       isFinished:false,
+      questionCount:20,
+      maxRange:10,
+      operators:[],
     }
   }
 
   handleStartQuizClick=(e)=>{
     e.preventDefault()
     let questions=resetQuestion(this.state.questions);
-    questions=generateRandomQuestion(questions);
+    questions=generateRandomQuestion(questions,this.state.operators.length!=0?this.state.operators: operatorList,this.state.maxRange);
     this.setState(
         {
           questions,
@@ -45,7 +49,7 @@ class Quiz extends React.Component {
 
   handleSkipClick=(e)=>{
     e.preventDefault()
-    let questions=generateRandomQuestion(this.state.questions);
+    let questions=generateRandomQuestion(this.state.questions,this.state.operators.length!=0?this.state.operators: operatorList,this.state.maxRange);
     this.setState(
         {
           questions,
@@ -94,13 +98,58 @@ class Quiz extends React.Component {
         isStarted:false,
         currentScore:0,
         isFinished:false,
+        questionCount:20,
+        maxRange:10,
+        operators:[],
       })
   }
 
     render() {
       return<>
                 <div style={{display:this.state.isStarted?"none":""}}>
-                  <button  className="start-quiz-button" onClick={this.handleStartQuizClick}>Start Quiz</button>
+                  <form onSubmit={this.handleStartQuizClick}>
+                    <div className="start-quiz-div">
+                      <div>
+                        <table>
+                          <tr>
+                            <td>How many question</td>
+                            <td>:</td>
+                            <td><input 
+                                type="number"
+                                min="2"
+                                value={this.state.questionCount}
+                                onChange={(e)=>this.setState({questionCount:e.target.value})}
+                              /></td>
+                          </tr>
+                          <tr>
+                            <td>Max operand range</td>
+                            <td>:</td>
+                            <td><input 
+                                type="number" 
+                                min="10" 
+                                value={this.state.maxRange}
+                                onChange={(e)=>this.setState({maxRange:e.target.value})}
+                              /></td>
+                          </tr>
+                          <tr>
+                            <td>Select operators</td>
+                            <td>:</td>
+                            <td><Select
+                                className="select-operator"
+                                value={this.state.operators}
+                                onChange={(e)=>this.setState({operators:e})}
+                                options={operatorList}
+                                isMulti
+                                placeholder="Select oprators"
+                              /></td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div>
+                        <button  className="start-quiz-button" type="submit">Start Quiz</button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
                 <div style={{display:this.state.isStarted?"":"none"}}>
                   <Question {...{
