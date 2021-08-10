@@ -140,6 +140,7 @@ class Quiz extends React.Component {
                                 onChange={(e)=>this.setState({operators:e})}
                                 options={operatorList}
                                 isMulti
+                                isSearchable
                                 placeholder="Select oprators"
                               /></td>
                           </tr>
