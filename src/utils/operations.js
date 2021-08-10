@@ -1,4 +1,4 @@
-export let questions=[];
+
 const operators=[
     {
         name:"add", 
@@ -41,32 +41,36 @@ const getRandomOperator=()=>{
     return operators[Math.floor((Math.random() * operators.length))];
 }
 
-export const generateRandomQuestion=()=>{
+export const generateRandomQuestion=(questions)=>{
     let currentData=[...questions];
     let newQuestionObj={
-        Question_no:currentData.length+1,
+        questionNo:currentData.length+1,
         operand1:getRandomNumber(),
         operand2:getRandomNumber(),
         operator:getRandomOperator(),
-        actual_answer:"",
-        obtained_answer:"",
+        actualAnswer:"",
+        obtainedAnswer:"",
         isCorrect:false,
         score:0,
     }
 
-    newQuestionObj.actual_answer=newQuestionObj.operator.action(newQuestionObj.operand1,newQuestionObj.operand2);
+    newQuestionObj.actualAnswer=newQuestionObj.operator.action(newQuestionObj.operand1,newQuestionObj.operand2);
 
     questions.push(newQuestionObj);   
+
+    return questions;
 }
 
-export const saveResponse=(index,answer)=>{
-    questions[index].obtained_answer=answer
-    if(questions[index].obtained_answer==questions[index].actual_answer){
+export const saveResponse=(questions,index,answer)=>{
+    questions[index].obtainedAnswer=answer
+    if(questions[index].obtainedAnswer==questions[index].actualAnswer){
         questions[index].isCorrect=true;
     }
+
+    return questions;
 }
 
-export const evaluateScore=()=>{
+export const evaluateScore=(questions)=>{
     let score=0;
     questions.forEach((question)=>{
         if(question.isCorrect) score++;
@@ -74,10 +78,12 @@ export const evaluateScore=()=>{
     return score;
 }
 
-export const resetQuestion=()=>{
+export const resetQuestion=(questions)=>{
     questions=[];
+
+    return questions;
 }
 
-export const showData=()=>{
+export const showData=(questions)=>{
     console.log("data",questions)
 }
