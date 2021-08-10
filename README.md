@@ -42,6 +42,9 @@
 ### Available Scripts
 
 In the project directory, you can run:
+#### `npm install`
+
+It will install all dependencies.\
 
 #### `npm start`
 
@@ -66,7 +69,7 @@ You may serve it with a static server:
 
   or
 
-``npm install -g serve``
+``npm install -g serve``\
 ``serve -s build``
 
 
